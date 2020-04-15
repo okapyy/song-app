@@ -1,9 +1,9 @@
 .contents
   .contents__fv-section
     .contents__fv-section__bottom
-      %form{class: "contents__fv-section__bottom__artist"}
-        %input{type: 'text', class: 'contents__fv-section__bottom__artist__input' , placeholder: 'アーティスト名 , 曲名'}
-        %input{type: 'submit', value: '検索', class: 'contents__fv-section__bottom__artist__btn'}
+      = form_tag videos_searches_path, method: :get, class: "contents__fv-section__bottom__artist" do
+        = text_field_tag :keyword, '', class: 'contents__fv-section__bottom__artist__input', placeholder: 'アーティスト名 , 曲名'
+        = submit_tag '検索', class: 'contents__fv-section__bottom__artist__btn'
   .contents__main
     %p ALL CONTENTS
     .contents__main__videoes-list
