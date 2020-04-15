@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
 
-  before_action :move_to_index, except:[:index]
+  before_action :move_to_index, except:[:index, :search]
 
   def index
     @videos = Video.includes(:user).order("created_at DESC").page(params[:page]).per(6)
@@ -33,6 +33,10 @@ class VideosController < ApplicationController
     video = Video.find(params[:id])
     video.destroy
     redirect_to root_path
+  end
+
+  def search
+    @videos = Video.search(params[:keyword])
   end
 
   private

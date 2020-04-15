@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   root to: 'videos#index'
 
+  namespace :videos do
+    resources :searches, only: [:index]
+  end
+
   resources :videos
   resources :users, only: [:show, :edit, :update]
 end
