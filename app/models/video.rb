@@ -1,4 +1,5 @@
 class Video < ApplicationRecord
+  has_many :favorites , dependent: :destroy
   belongs_to :user
 
   mount_uploader :video, VideoUploader
@@ -10,6 +11,10 @@ class Video < ApplicationRecord
     else
       Video.all
     end
+  end
+
+  def favorite_by?(user)
+    favorites.where(user_id: user.id).exists?
   end
 
 end

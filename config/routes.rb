@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     resources :searches, only: [:index]
   end
 
-  resources :videos
+  resources :videos do
+    resource :favorites, only: [:create, :destroy]
+  end
+  
   resources :users, only: [:show, :edit, :update]
+  
 end

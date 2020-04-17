@@ -11,6 +11,8 @@
           = @video.artist
         .show-body__contents__box__details__created-at
           = @video.created_at.strftime("%Y年%m月%d日  %H時%M分")
+        .show-body__contents__box__details__user-name
+          = @video.user.name
         .show-body__contents__box__details__content
           = simple_format @video.content
       - if user_signed_in? && current_user.id == @video.user_id
@@ -22,3 +24,6 @@
           .show-body__contents__box__btn__bottom__btn
             = link_to video_path(@video.id), method: :delete, class: 'show-body__contents__box__bottom__btn__delete' do
               Delete
+      - else
+        .show-body__contents__box__favorite
+          = render "favorites/favorite"
