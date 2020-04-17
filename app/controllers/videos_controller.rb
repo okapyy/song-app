@@ -39,6 +39,10 @@ class VideosController < ApplicationController
     @videos = Video.search(params[:keyword])
   end
 
+  def favorites
+    @videos = current_user.favorite_videos.includes(:user).order("created_at DESC")
+  end
+
   private
   def video_params
     params.require(:video).permit(:video, :artist, :song_title, :content).merge(user_id: current_user.id)

@@ -23,6 +23,9 @@
           font-size: 10px;
           text-align: right;
         }
+        &__user-name {
+          text-align: right;
+        }
         &__content {
           font-size: 14px;
         }
@@ -41,6 +44,33 @@
             text-decoration: none;
             color: #555555;
             margin-left: 5px;
+          }
+        }
+      }
+      &__favorite {
+        margin-top: 20px;
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+        &__delete {
+          background-color: rgb(7, 74, 119);
+          border-radius: 5px;
+          text-align: center;
+          padding: 10px 20px;
+          font-size: 11px;
+          &:hover {
+            background-color: rgb(12, 131, 211);
+          }
+        }
+        &__create {
+          background-color: rgb(12,131, 211);
+          border-radius: 5px;
+          text-align: center;
+          padding: 10px 20px;
+          font-size: 11px;
+          &:hover {
+            background-color: rgb(7, 74, 119);
           }
         }
       }

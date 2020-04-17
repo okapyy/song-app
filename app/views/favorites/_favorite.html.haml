@@ -1,0 +1,6 @@
+- if @video.favorite_by?(current_user)
+  = link_to video_favorites_path(@video.id), method: :delete, class: "show-body__contents__box__favorite__delete" do
+    お気に入り解除
+- else
+  = link_to video_favorites_path(@video.id), method: :post, class: "show-body__contents__box__favorite__create" do
+    お気に入り登録

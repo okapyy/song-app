@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @name = user.name
     @videos = user.videos.page(params[:page]).order("created_at DESC").per(4)
+    @favorites = current_user.favorites_videos.includes(:user).page(params[:page]).per(4)
   end
 
   def edit
