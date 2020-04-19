@@ -27,7 +27,7 @@
               .user-show__main__videoes-list__group__label__text__user-name
                 = video.user.name
     .user-show__main__paginate
-      = paginate(@videos)
+      = paginate(@favorites)
     %p MY VIDEO
     .user-show__main__videoes-list
       - @videos.each do |video|
