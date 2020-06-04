@@ -22,7 +22,7 @@ class VideoUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process scale: [200, 300]
+  # process scale: [1000, 563]
   
   # def scale(width, height)
   #   # do something
@@ -47,8 +47,9 @@ class VideoUploader < CarrierWave::Uploader::Base
 
     File.delete(tmpfile)
   end
+
   # version :thumb do
-  #   process resize_to_fit: [50, 50]
+  #   process resize_to_fit: [1000, 563]
   # end
 
   # Add a white list of extensions which are allowed to be uploaded.
